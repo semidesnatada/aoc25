@@ -6,5 +6,6 @@ import "fmt"
 func main () {
 	fmt.Println("hello world")
 
-	day_1()
+	// day_1()
+	day_2()
 }
