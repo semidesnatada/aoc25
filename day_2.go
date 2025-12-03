@@ -154,11 +154,7 @@ func check_n_repeats(n int, s string) bool {
 		}
 
 	}
-	if !broken {
-		return true
-	}
-
-	return false
+	return !broken
 }
 
 func checkPairIsNotEqual(base, comparison string) bool {

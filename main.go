@@ -1,11 +1,10 @@
 package main
 
-import "fmt"
-
 
 func main () {
-	fmt.Println("hello world")
 
 	// day_1()
-	day_2()
+	// day_2()
+	day_3()
+
 }
