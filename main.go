@@ -9,7 +9,8 @@ func main () {
 	// day_4()
 	// day_5()
 	// day_6()
+	// day_7()
 
-	day_7()
+	day_8()
 
 }
