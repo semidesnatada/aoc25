@@ -13,6 +13,9 @@ import (
 
 func day_8() {
 
+	// slightly overcomplicated implementation of Kruskal's algorithm
+	// part 2 is identical to part 1, except for the termination condition
+
 	test_juncs := load_day_8_data("day_8_test.csv")
 	real_tree := load_day_8_data("day_8.csv")
 
