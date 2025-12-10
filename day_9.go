@@ -12,7 +12,9 @@ import (
 
 func day_9() {
 
-	// super slow - haven't identified bottleneck
+	// this is now significantly better optimised,
+	// there was a bottleneck in the doEdgesIntersectWithShapeFunction
+	// which has now been removed.
 
 	// fmt.Println("ninth day")
 
@@ -79,8 +81,10 @@ func process_part2_day9(coords []coord) int {
 		// 	fmt.Println("Checked ", i, " rects of ", len(rects))
 		// }
 
+		// *** Important note *** //
 		// note that the below inShape function calls are not necessary,
-		// and are only included to try to speed up computation
+		// and are only included to try to speed up computation. they do in fact
+		// slow down the computation. the newly optimised doEdgesIntersectWithShape function is sufficient.
 		
 		// if rect corners are not in shape, then the rect is not in shape
 		// a, b := rect.getOtherCoords()
@@ -228,35 +232,63 @@ func (r rectangle) doEdgesIntersectWithShape(s shape) bool {
 	min_y := min(r.c1.y, r.c2.y)
 	max_y := max(r.c1.y, r.c2.y)
 
-	for xx := min_x + 1; xx < max_x; xx++ {
-		if _, ok := s.corners[coord{x: xx, y: min_y+1}]; ok {
+	// instead of checking every point on the border of the ring
+	// is found within the map.
+	// we could check the map of edges and see whether any are within
+	// the border of the ring
+
+	for x_val := range s.verti_edges[min_y+1] {
+		if x_val >= min_x+1 && x_val < max_x {
 			return true
 		}
-		if _, ok := s.corners[coord{x: xx, y: max_y-1}]; ok {
+	}
+	for x_val := range s.verti_edges[max_y-1] {
+		if x_val >= min_x+1 && x_val < max_x {
 			return true
 		}
-		if _, ok := s.verti_edges[min_y+1][xx]; ok {
+	}
+	
+	for y_val := range s.horiz_edges[min_x+1] {
+		if y_val >= min_y+1 && y_val < max_y {
 			return true
 		}
-		if _, ok := s.verti_edges[max_y-1][xx]; ok {
+	}
+	for y_val := range s.horiz_edges[max_y-1] {
+		if y_val >= min_y+1 && y_val < max_y {
 			return true
 		}
 	}
 
-	for yy := min_y + 1; yy < max_y; yy++ {
-		if _, ok := s.corners[coord{x: min_x+1, y: yy}]; ok {
-			return true
-		}
-		if _, ok := s.corners[coord{x: max_x-1, y: yy}]; ok {
-			return true
-		}
-		if _, ok := s.horiz_edges[min_x+1][yy]; ok {
-			return true
-		}
-		if _, ok := s.horiz_edges[max_x-1][yy]; ok {
-			return true
-		}
-	}
+	// old, poorly optimised (but functional) code
+	// for xx := min_x + 1; xx < max_x; xx++ {
+	// 	if _, ok := s.corners[coord{x: xx, y: min_y+1}]; ok {
+	// 		return true
+	// 	}
+	// 	if _, ok := s.corners[coord{x: xx, y: max_y-1}]; ok {
+	// 		return true
+	// 	}
+	// 	if _, ok := s.verti_edges[min_y+1][xx]; ok {
+	// 		return true
+	// 	}
+	// 	if _, ok := s.verti_edges[max_y-1][xx]; ok {
+	// 		return true
+	// 	}
+	// }
+
+	// for yy := min_y + 1; yy < max_y; yy++ {
+	// 	if _, ok := s.corners[coord{x: min_x+1, y: yy}]; ok {
+	// 		return true
+	// 	}
+	// 	if _, ok := s.corners[coord{x: max_x-1, y: yy}]; ok {
+	// 		return true
+	// 	}
+	// 	if _, ok := s.horiz_edges[min_x+1][yy]; ok {
+	// 		return true
+	// 	}
+	// 	if _, ok := s.horiz_edges[max_x-1][yy]; ok {
+	// 		return true
+	// 	}
+	// }
 	return false
 }
 

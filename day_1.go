@@ -39,7 +39,6 @@ func day_1() {
 	fmt.Println("// Part 2 //")
 	fmt.Println("Part 2 number of zeros in test data is: ", p2_zeros)
 	fmt.Println("Part 2 number of zeros in real data is: ", p2_real_zeros)
-	fmt.Println()
 
 }
 

@@ -26,6 +26,7 @@ func day_3() {
 	joltage_p1 := process_part1_inputs(real_data)
 	fmt.Println("Part 1 sum of real max joltages: ", joltage_p1)
 
+	fmt.Println()
 	fmt.Println("// Part 2 //")
 	// Part 2
 	test_joltage_p2 := process_part2_inputs(test_data)

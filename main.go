@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main () {
 
 	day_1()
@@ -15,4 +17,6 @@ func main () {
 
 	// day_11()
 
+	fmt.Println()
+	
 }
