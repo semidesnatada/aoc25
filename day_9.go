@@ -14,7 +14,7 @@ func day_9() {
 
 	// super slow - haven't identified bottleneck
 
-	fmt.Println("ninth day")
+	// fmt.Println("ninth day")
 
 	test_tiles := load_day_9_data("day_9_test.csv")
 	real_tiles := load_day_9_data("day_9.csv")
@@ -23,6 +23,11 @@ func day_9() {
 	// 	fmt.Println(tile, i)
 	// }
 
+	fmt.Println()
+	fmt.Println()
+	fmt.Println("** Day 9 **")
+	fmt.Println("// Part 1 //")
+
 	// Part 1
 	test_out := process_part1_day9(test_tiles)
 	fmt.Println("Part 1 test output: ", test_out)
@@ -30,6 +35,8 @@ func day_9() {
 	out := process_part1_day9(real_tiles)
 	fmt.Println("Part 1 real output: ", out)
 
+	fmt.Println()
+	fmt.Println("// Part 2 //")
 	// Part 2
 	test_out_p2 := process_part2_day9(test_tiles)
 	fmt.Println("Part 2 test output: ", test_out_p2)

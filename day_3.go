@@ -10,12 +10,15 @@ import (
 
 func day_3() {
 
-	fmt.Println("third day")
+	// fmt.Println("third day")
 
 	test_data := load_day_3_data("day_3_test.csv")
 	real_data := load_day_3_data("day_3.csv")
 
-
+	fmt.Println()
+	fmt.Println()
+	fmt.Println("** Day 3 **")
+	fmt.Println("// Part 1 //")
 	// Part 1
 	test_joltage_p1 := process_part1_inputs(test_data)
 	fmt.Println("Part 1 sum of test max joltages: ", test_joltage_p1)
@@ -23,6 +26,7 @@ func day_3() {
 	joltage_p1 := process_part1_inputs(real_data)
 	fmt.Println("Part 1 sum of real max joltages: ", joltage_p1)
 
+	fmt.Println("// Part 2 //")
 	// Part 2
 	test_joltage_p2 := process_part2_inputs(test_data)
 	fmt.Println("Part 2 sum of test max joltages: ", test_joltage_p2)

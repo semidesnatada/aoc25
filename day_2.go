@@ -15,11 +15,15 @@ type Range struct {
 
 func day_2() {
 
-	fmt.Println("second day")
+	// fmt.Println("second day")
 
 	test_data := load_day_2_data("day_2_test.csv")
 	real_data := load_day_2_data("day_2.csv")
 
+	fmt.Println()
+	fmt.Println()
+	fmt.Println("** Day 2 **")
+	fmt.Println("// Part 1 //")
 	// Part 1
 	no_test_invalid_p1 := test_all_ranges_in_data_p1(test_data)
 	fmt.Println("Part 1 test sum of invalid IDs: ", no_test_invalid_p1)
@@ -27,6 +31,8 @@ func day_2() {
 	no_invalid_p1 := test_all_ranges_in_data_p1(real_data)
 	fmt.Println("Part 1 real sum of invalid IDs: ", no_invalid_p1)
 	
+	fmt.Println()
+	fmt.Println("// Part 2 //")
 	// Part 2
 	no_test_invalid_p2 := test_all_ranges_in_data_p2(test_data)
 	fmt.Println("Part 2 test sum of invalid IDs: ", no_test_invalid_p2)

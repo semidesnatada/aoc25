@@ -12,7 +12,7 @@ import (
 
 func day_6() {
 
-	fmt.Println("sixth day")
+	// fmt.Println("sixth day")
 
 	// Part 1
 	test_homework_p1 := load_day_6_data_p1("day_6_test.csv", 3)
@@ -21,12 +21,19 @@ func day_6() {
 	// fmt.Println(real_homework)
 		
 
+	fmt.Println()
+	fmt.Println()
+	fmt.Println("** Day 6 **")
+	fmt.Println("// Part 1 //")
+
 	test_out := process_part1_day6(test_homework_p1)
 	fmt.Println("Part 1 test output: ", test_out)
 
 	out := process_part1_day6(real_homework_p1)
 	fmt.Println("Part 1 real output: ", out)
 
+	fmt.Println()
+	fmt.Println("// Part 2 //")
 	// Part 2
 	test_homework_p2 := load_day_6_data_p2("day_6_test.csv", 3)
 	real_homework_p2 := load_day_6_data_p2("day_6.csv", 4)

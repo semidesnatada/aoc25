@@ -1,3 +1,4 @@
 inputs/
 day_9_test.go
 day_10_test.go
+.DS_Store

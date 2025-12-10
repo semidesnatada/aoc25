@@ -15,7 +15,7 @@ type safeInstrucions struct {
 
 func day_1() {
 
-	fmt.Println("first day")
+	// fmt.Println("first day")
 
 	test_data := load_day_1_data("day_1_test.csv")
 	real_data := load_day_1_data("day_1.csv")
@@ -24,18 +24,21 @@ func day_1() {
 	zeros := process_safe_instructions(test_data)
 	real_zeros := process_safe_instructions(real_data)
 
-	fmt.Println("// Part 1 //")
-	fmt.Println("Number of zeros in test data is: ", zeros)
-	fmt.Println("Number of zeros in real data is: ", real_zeros)
 	fmt.Println()
+	fmt.Println("** Day 1 **")
+
+	fmt.Println("// Part 1 //")
+	fmt.Println("Part 1 number of zeros in test data is: ", zeros)
+	fmt.Println("Part 1 umber of zeros in real data is: ", real_zeros)
 
 	// Part 2
 	p2_zeros := process_safe_instructions_part_2(test_data)
 	p2_real_zeros := process_safe_instructions_part_2(real_data)
 
+	fmt.Println()
 	fmt.Println("// Part 2 //")
-	fmt.Println("Number of zeros in test data is: ", p2_zeros)
-	fmt.Println("Number of zeros in real data is: ", p2_real_zeros)
+	fmt.Println("Part 2 number of zeros in test data is: ", p2_zeros)
+	fmt.Println("Part 2 number of zeros in real data is: ", p2_real_zeros)
 	fmt.Println()
 
 }
@@ -69,7 +72,7 @@ func process_safe_instructions_part_2(ins []safeInstrucions) int {
 	curr := 50
 
 	for _, instruction := range ins {
-		fmt.Println(curr, instruction.Value, instruction.Direction, zero_count)
+		// fmt.Println(curr, instruction.Value, instruction.Direction, zero_count)
 		if (curr + instruction.Value >= 100 && instruction.Direction) || (curr - instruction.Value <= 0 && !instruction.Direction) {
 			if large := curr + instruction.Value; large >= 100 && instruction.Direction {
 				zero_count += large / 100

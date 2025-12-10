@@ -12,7 +12,7 @@ import (
 
 func day_5() {
 
-	fmt.Println("fifth day")
+	// fmt.Println("fifth day")
 
 	test_ranges, test_availables := load_day_5_data("day_5_test.csv")
 	real_ranges, real_availables := load_day_5_data("day_5.csv")
@@ -23,7 +23,10 @@ func day_5() {
 	// for i, row := range test_data {
 	// 	fmt.Println(row, i)
 	// }
-		
+	fmt.Println()
+	fmt.Println()
+	fmt.Println("** Day 5 **")
+	fmt.Println("// Part 1 //")
 	// Part 1
 	test_out := process_part1_day5(test_ranges, test_availables)
 	fmt.Println("Part 1 test output: ", test_out)
@@ -31,6 +34,8 @@ func day_5() {
 	out := process_part1_day5(real_ranges, real_availables)
 	fmt.Println("Part 1 real output: ", out)
 
+	fmt.Println()
+	fmt.Println("// Part 2 //")
 	// Part 2
 	test_out_p2 := process_part2_day5(test_ranges)
 	fmt.Println("Part 2 test output: ", test_out_p2)

@@ -22,6 +22,11 @@ func day_8() {
 	// for _, row := range test_juncs {
 	// 	fmt.Println(row)
 	// }
+
+	fmt.Println()
+	fmt.Println()
+	fmt.Println("** Day 8 **")
+	fmt.Println("// Part 1 //")
 		
 	// Part 1
 	test_out := process_part1_day8(test_juncs, 10)
@@ -30,6 +35,8 @@ func day_8() {
 	out := process_part1_day8(real_tree, 1000)
 	fmt.Println("Part 1 real output: ", out)
 
+	fmt.Println()
+	fmt.Println("// Part 2 //")
 	// Part 2
 	test_out_p2 := process_part2_day8(test_juncs)
 	fmt.Println("Part 2 test output: ", test_out_p2)

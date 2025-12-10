@@ -17,6 +17,10 @@ func day_7() {
 	// 	fmt.Println(row, i)
 	// }
 		
+	fmt.Println()
+	fmt.Println()
+	fmt.Println("** Day 7 **")
+	fmt.Println("// Part 1 //")
 	// Part 1
 	test_out := process_part1_day7(test_tree)
 	fmt.Println("Part 1 test output: ", test_out)
@@ -24,6 +28,8 @@ func day_7() {
 	out := process_part1_day7(real_tree)
 	fmt.Println("Part 1 real output: ", out)
 
+	fmt.Println()
+	fmt.Println("// Part 2 //")
 	// Part 2
 	test_out_p2 := process_part2_day7(test_tree)
 	fmt.Println("Part 2 test output: ", test_out_p2)
