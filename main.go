@@ -1,6 +1,5 @@
 package main
 
-
 func main () {
 
 	// day_1()
@@ -11,7 +10,8 @@ func main () {
 	// day_6()
 	// day_7()
 	// day_8()
+	// day_9()
 
-	day_9()
+	day_10()
 
 }
