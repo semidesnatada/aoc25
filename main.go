@@ -1,22 +1,40 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main () {
 
-	day_1()
-	day_2()
-	day_3()
-	day_4()
-	day_5()
-	day_6()
-	day_7()
-	day_8()
-	day_9()
-	day_10()
+	// e.g.
+	day_01(true)
+	// day_12(true)
 
-	// day_11()
+	all_days()
 
-	fmt.Println()
+}
+
+func all_days() {
+
+	days := []func(bool){
+		day_01, day_02, day_03,
+		day_04, day_05, day_06,
+		day_07, day_08, day_09,
+		day_10, day_11, day_12,
+	}
+
+	t_0 := time.Now()
+
+	for _, day := range days {
+		// the bool passed into the function decides whether or not
+		// the function outputs will be printed - true => print out
+		day(false)
+	}
+
+	dt := time.Since(t_0)
 	
+	fmt.Printf("\nSolved all puzzles in %v \n\n", dt)
+	
+
 }

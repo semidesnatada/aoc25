@@ -10,38 +10,43 @@ import (
 	"strings"
 )
 
-func day_5() {
+func day_05(print bool) {
 
 	// fmt.Println("fifth day")
 
-	test_ranges, test_availables := load_day_5_data("day_5_test.csv")
-	real_ranges, real_availables := load_day_5_data("day_5.csv")
+	test_ranges, test_availables := load_day_5_data("day_05_test.csv")
+	real_ranges, real_availables := load_day_5_data("day_05.csv")
 
-	fmt.Println(test_ranges)
-	fmt.Println(test_availables)
+	// fmt.Println(test_ranges)
+	// fmt.Println(test_availables)
 
 	// for i, row := range test_data {
 	// 	fmt.Println(row, i)
 	// }
-	fmt.Println()
-	fmt.Println()
-	fmt.Println("** Day 5 **")
-	fmt.Println("// Part 1 //")
+
 	// Part 1
 	test_out := process_part1_day5(test_ranges, test_availables)
-	fmt.Println("Part 1 test output: ", test_out)
-
 	out := process_part1_day5(real_ranges, real_availables)
-	fmt.Println("Part 1 real output: ", out)
 
-	fmt.Println()
-	fmt.Println("// Part 2 //")
+	if print {
+		fmt.Println()
+		fmt.Println()
+		fmt.Println("** Day 5 **")
+		fmt.Println("// Part 1 //")
+		fmt.Println("Part 1 test output: ", test_out)
+		fmt.Println("Part 1 real output: ", out)
+	}
+
 	// Part 2
 	test_out_p2 := process_part2_day5(test_ranges)
-	fmt.Println("Part 2 test output: ", test_out_p2)
-
 	out_p2 := process_part2_day5(real_ranges)
-	fmt.Println("Part 2 real output: ", out_p2)
+
+	if print {
+		fmt.Println()
+		fmt.Println("// Part 2 //")
+		fmt.Println("Part 2 test output: ", test_out_p2)
+		fmt.Println("Part 2 real output: ", out_p2)
+	}
 
 
 }

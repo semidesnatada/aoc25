@@ -10,7 +10,7 @@ import (
 	"strings"
 )
 
-func day_9() {
+func day_09(print bool) {
 
 	// this is now significantly better optimised,
 	// there was a bottleneck in the doEdgesIntersectWithShapeFunction
@@ -18,33 +18,36 @@ func day_9() {
 
 	// fmt.Println("ninth day")
 
-	test_tiles := load_day_9_data("day_9_test.csv")
-	real_tiles := load_day_9_data("day_9.csv")
+	test_tiles := load_day_9_data("day_09_test.csv")
+	real_tiles := load_day_9_data("day_09.csv")
 
 	// for i, tile := range test_tiles {
 	// 	fmt.Println(tile, i)
 	// }
-
-	fmt.Println()
-	fmt.Println()
-	fmt.Println("** Day 9 **")
-	fmt.Println("// Part 1 //")
-
+	
 	// Part 1
 	test_out := process_part1_day9(test_tiles)
-	fmt.Println("Part 1 test output: ", test_out)
-
 	out := process_part1_day9(real_tiles)
-	fmt.Println("Part 1 real output: ", out)
 
-	fmt.Println()
-	fmt.Println("// Part 2 //")
+	if print {
+		fmt.Println()
+		fmt.Println()
+		fmt.Println("** Day 9 **")
+		fmt.Println("// Part 1 //")
+		fmt.Println("Part 1 test output: ", test_out)
+		fmt.Println("Part 1 real output: ", out)
+	}
+
 	// Part 2
 	test_out_p2 := process_part2_day9(test_tiles)
-	fmt.Println("Part 2 test output: ", test_out_p2)
-
 	out_p2 := process_part2_day9(real_tiles)
-	fmt.Println("Part 2 real output: ", out_p2)
+	
+	if print {
+		fmt.Println()
+		fmt.Println("// Part 2 //")
+		fmt.Println("Part 2 test output: ", test_out_p2)
+		fmt.Println("Part 2 real output: ", out_p2)
+	}
 
 }
 

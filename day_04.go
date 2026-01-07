@@ -7,36 +7,35 @@ import (
 	"os"
 )
 
-func day_4() {
+func day_04(print bool) {
 
-	// fmt.Println("fourth day")
+	test_data := load_day_4_data("day_04_test.csv")
+	real_data := load_day_4_data("day_04.csv")
 
-	test_data := load_day_4_data("day_4_test.csv")
-	real_data := load_day_4_data("day_4.csv")
-
-	// for i, row := range test_data {
-	// 	fmt.Println(row, i)
-	// }
-
-	fmt.Println()
-	fmt.Println()
-	fmt.Println("** Day 4 **")
-	fmt.Println("// Part 1 //")
 	// Part 1
 	test_out, _ := process_part1_day4(test_data)
-	fmt.Println("Part 1 test output: ", test_out)
-
 	out, _ := process_part1_day4(real_data)
-	fmt.Println("Part 1 real output: ", out)
 
-	fmt.Println()
-	fmt.Println("// Part 2 //")
+	if print {
+		fmt.Println()
+		fmt.Println()
+		fmt.Println("** Day 4 **")
+		fmt.Println("// Part 1 //")
+
+		fmt.Println("Part 1 test output: ", test_out)
+		fmt.Println("Part 1 real output: ", out)
+	}
+
 	// Part 2
 	test_out_p2 := process_part2_day4(test_data)
-	fmt.Println("Part 2 test output: ", test_out_p2)
-
 	out_p2 := process_part2_day4(real_data)
-	fmt.Println("Part 2 real output: ", out_p2)
+
+	if print {
+		fmt.Println()
+		fmt.Println("// Part 2 //")
+		fmt.Println("Part 2 test output: ", test_out_p2)
+		fmt.Println("Part 2 real output: ", out_p2)
+	}
 
 }
 

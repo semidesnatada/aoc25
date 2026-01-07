@@ -11,7 +11,7 @@ import (
 	"github.com/draffensperger/golp"
 )
 
-func day_10() {
+func day_10(print bool) {
 
 
 	// this solution requires an external ILP solver as
@@ -29,26 +29,29 @@ func day_10() {
 	// 	fmt.Println(machine.joltage)
 	// }
 
-	fmt.Println()
-	fmt.Println()
-	fmt.Println("** Day 10 **")
-	fmt.Println("// Part 1 //")
-
 	// Part 1
 	test_out := process_part1_day10(test_machines)
-	fmt.Println("Part 1 test output: ", test_out)
-
 	out := process_part1_day10(real_machines)
-	fmt.Println("Part 1 real output: ", out)
 
-	fmt.Println()
-	fmt.Println("// Part 2 //")
+	if print {
+		fmt.Println()
+		fmt.Println()
+		fmt.Println("** Day 10 **")
+		fmt.Println("// Part 1 //")
+		fmt.Println("Part 1 test output: ", test_out)
+		fmt.Println("Part 1 real output: ", out)
+	}
+
 	// Part 2
 	test_out_p2 := process_part2_day10(test_machines)
-	fmt.Println("Part 2 test output: ", test_out_p2)
-
 	out_p2 := process_part2_day10(real_machines)
-	fmt.Println("Part 2 real output: ", out_p2)
+
+	if print {
+		fmt.Println()
+		fmt.Println("// Part 2 //")
+		fmt.Println("Part 2 test output: ", test_out_p2)
+		fmt.Println("Part 2 real output: ", out_p2)
+	}
 
 }
 

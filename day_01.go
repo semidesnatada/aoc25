@@ -13,32 +13,36 @@ type safeInstrucions struct {
 	Direction bool
 }
 
-func day_1() {
+func day_01(print bool) {
 
 	// fmt.Println("first day")
 
-	test_data := load_day_1_data("day_1_test.csv")
-	real_data := load_day_1_data("day_1.csv")
+	test_data := load_day_1_data("day_01_test.csv")
+	real_data := load_day_1_data("day_01.csv")
 
 	// Part 1
 	zeros := process_safe_instructions(test_data)
 	real_zeros := process_safe_instructions(real_data)
 
-	fmt.Println()
-	fmt.Println("** Day 1 **")
+	if print {
+		fmt.Println()
+		fmt.Println("** Day 1 **")
 
-	fmt.Println("// Part 1 //")
-	fmt.Println("Part 1 number of zeros in test data is: ", zeros)
-	fmt.Println("Part 1 umber of zeros in real data is: ", real_zeros)
+		fmt.Println("// Part 1 //")
+		fmt.Println("Part 1 number of zeros in test data is: ", zeros)
+		fmt.Println("Part 1 umber of zeros in real data is: ", real_zeros)
+	}
 
 	// Part 2
 	p2_zeros := process_safe_instructions_part_2(test_data)
 	p2_real_zeros := process_safe_instructions_part_2(real_data)
 
-	fmt.Println()
-	fmt.Println("// Part 2 //")
-	fmt.Println("Part 2 number of zeros in test data is: ", p2_zeros)
-	fmt.Println("Part 2 number of zeros in real data is: ", p2_real_zeros)
+	if print {
+		fmt.Println()
+		fmt.Println("// Part 2 //")
+		fmt.Println("Part 2 number of zeros in test data is: ", p2_zeros)
+		fmt.Println("Part 2 number of zeros in real data is: ", p2_real_zeros)
+	}
 
 }
 

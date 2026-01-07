@@ -8,34 +8,38 @@ import (
 	"strconv"
 )
 
-func day_7() {
+func day_07(print bool) {
 
-	test_tree := load_day_7_data("day_7_test.csv")
-	real_tree := load_day_7_data("day_7.csv")
+	test_tree := load_day_7_data("day_07_test.csv")
+	real_tree := load_day_7_data("day_07.csv")
 
 	// for i, row := range test_tree {
 	// 	fmt.Println(row, i)
 	// }
-		
-	fmt.Println()
-	fmt.Println()
-	fmt.Println("** Day 7 **")
-	fmt.Println("// Part 1 //")
+
 	// Part 1
 	test_out := process_part1_day7(test_tree)
-	fmt.Println("Part 1 test output: ", test_out)
-
 	out := process_part1_day7(real_tree)
-	fmt.Println("Part 1 real output: ", out)
 
-	fmt.Println()
-	fmt.Println("// Part 2 //")
+	if print {
+		fmt.Println()
+		fmt.Println()
+		fmt.Println("** Day 7 **")
+		fmt.Println("// Part 1 //")
+		fmt.Println("Part 1 test output: ", test_out)
+		fmt.Println("Part 1 real output: ", out)
+	}
+
 	// Part 2
 	test_out_p2 := process_part2_day7(test_tree)
-	fmt.Println("Part 2 test output: ", test_out_p2)
-
 	out_p2 := process_part2_day7(real_tree)
-	fmt.Println("Part 2 real output: ", out_p2)
+	
+	if print {
+		fmt.Println()
+		fmt.Println("// Part 2 //")
+		fmt.Println("Part 2 test output: ", test_out_p2)
+		fmt.Println("Part 2 real output: ", out_p2)
+	}
 
 
 }
